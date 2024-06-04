@@ -1,4 +1,4 @@
 /env
-domains.txt
-output.txt
-whois-test.py
+/domains.txt
+/output.txt
+/whois-test.py
