@@ -4,10 +4,10 @@ import time
 
 logging.basicConfig(level=logging.INFO)
 
-def checkDomain(domain, retries=3, delay=20):
+def checkDomain(domain, retries=3, delay=60):
     for attempt in range(retries):
         try:
-            domainInfo = whois.whois(domain);
+            domainInfo = whois.whois(domain)
             if domainInfo.creation_date == None and domainInfo.domain_name == None:
                 return True, None, None, None, None
             else:
@@ -37,7 +37,7 @@ def main():
                 )
             logging.info(output.strip())
             outputFile.write(output + "\n")
-            time.sleep(20)
+            time.sleep(60)
 
 if __name__ == __name__:
     main()
