@@ -1,7 +1,7 @@
 # Simple Whois Domain Batch Checker
 A simple python script to check domains from a file
-- The file should be called `domains.txt` and should include domains to check sperated by `\n` (Enter button)
-- The file has to be in the same directory as the script
+- The input file should be a text file, and every domain should be seperated by `\n` (Enter button)
+- The program will first prompt you to enter the path to the input file, that to the output, this also includes the names of the files themselves
 
 This script sometimes returns domains as avalable, when in fact they are not, will try to fix that or if you know the issue, please open pull request.
 
