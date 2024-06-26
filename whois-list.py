@@ -1,6 +1,4 @@
-import whois
-import logging
-import time
+import whois, logging, datetime, time
 
 logging.basicConfig(level=logging.INFO)
 
@@ -17,10 +15,17 @@ def checkDomain(domain, retries=3, delay=60):
             time.sleep(delay)
 
 def main():
-    with open("domains.txt", "r") as file:
+    txtInput = input("Input the domains txt filename path: ")
+    with open(txtInput, "r") as file:
         domains = file.readlines()
 
-    with open("output.txt", "w") as outputFile:
+    txtOutput = input ("Enter output txt filename path: ")
+    if not txtInput:
+        txtInput = output
+
+    date = datetime.date.today().strftime('%Y-%m-%d')
+
+    with open("output-" + date + ".txt", "w") as outputFile:
         for domain in domains:
             domain = domain.strip()
             avalable, registrant_name, creation_date, updated_date, expiration_date = checkDomain(domain)
