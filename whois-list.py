@@ -25,7 +25,7 @@ def main():
 
     date = datetime.date.today().strftime('%Y-%m-%d')
 
-    with open("output-" + date + ".txt", "w") as outputFile:
+    with open(date + "-" + txtOutput + ".txt", "w") as outputFile:
         for domain in domains:
             domain = domain.strip()
             avalable, registrant_name, creation_date, updated_date, expiration_date = checkDomain(domain)
