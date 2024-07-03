@@ -2,11 +2,12 @@ import whois, logging, datetime, time
 
 logging.basicConfig(level=logging.INFO)
 
+
 def checkDomain(domain, retries=3, delay=60):
     for attempt in range(retries):
         try:
             domainInfo = whois.whois(domain)
-            if domainInfo.creation_date == None and domainInfo.domain_name == None:
+            if domainInfo.creation_date is None and domainInfo.domain_name is None:
                 return True, None, None, None, None
             else:
                 return (False, domainInfo.registrant_name, domainInfo.creation_date,
