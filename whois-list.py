@@ -21,7 +21,7 @@ def main():
 
     txtOutput = input ("Enter output txt filename path: ")
     if not txtInput:
-        txtInput = output
+        txtInput = "output"
 
     date = datetime.date.today().strftime('%Y-%m-%d')
 
