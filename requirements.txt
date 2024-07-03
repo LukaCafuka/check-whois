@@ -1,1 +1,1 @@
-whois
+python-whois
