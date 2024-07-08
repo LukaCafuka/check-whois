@@ -31,7 +31,7 @@ def parseFile(inputFile, outputFile, retries, delay):
         return
 
     try:
-        with open(outputFile + "-" + date + ".txt", "w") as outputFile:
+        with open(outputFile + "-" + date + ".txt", "w", encoding='utf-8') as outputFile:
             for domain in domains:
                 domain = domain.strip()
                 available, registrant_name, creation_date, updated_date, expiration_date = checkDomain(domain, retries,
