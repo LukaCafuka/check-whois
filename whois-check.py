@@ -1,6 +1,7 @@
 import argparse
 from functions import *
 
+
 def main():
 
     parser = argparse.ArgumentParser(
@@ -15,6 +16,7 @@ def main():
     args = parser.parse_args()
 
     parseFile(inputFile=args.input, outputFile=args.output, retries=args.retries, delay=args.time)
+
 
 if __name__ == '__main__':
     main()
