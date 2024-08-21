@@ -10,12 +10,13 @@ if __name__ == "__main__":
     )
     parser.add_argument('input', help='input file containing domains')
     parser.add_argument('-o', '--output', help='output file name for full data', default='full_output.txt', required=False)
+    parser.add_argument('-a', '--api', help='your WhoisXML api key', required=True)
 
     args = parser.parse_args()
 
     input_file = args.input
     full_output_file = args.output
     summary_output_file = "summary" + args.output
-    api_key = readLine("API-KEY.txt", 2)
+    api_key = args.api
 
     parseFileAPI(input_file, full_output_file, summary_output_file, api_key)
